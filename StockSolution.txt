@@ -1,0 +1,4 @@
+Concentration(mM) Compound Formula(case sensitive)
+4000 NaCl
+500 PBS
+200 Fi

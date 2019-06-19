@@ -1,0 +1,12 @@
+Number of Solutions needed to be made: 2
+Final Volume of Solutions(in mL): 500,1000
+
+Composition of the solutions (Concentration(mM) Compound Formula(case sensitive)):
+***Place Two lines in between each solution****
+
+200 NaCl
+100 PBS
+
+500 NaCl
+200 Fi
+500 PBS
