@@ -14,7 +14,7 @@ class SolutionList:
 
     def remove (self, Solution):
         pass
-
+        found = false
         #initialize found to false
         #binary search
         #if found
