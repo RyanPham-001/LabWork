@@ -14,7 +14,7 @@ class SolutionList:
 
     def remove (self, Solution):
         pass
-        found = false
+
         #initialize found to false
         #binary search
         #if found
@@ -38,19 +38,20 @@ class SolutionList:
 
         return temp
 
-    def readTxT(self,file_name):
+    def readTxT(self,file_name,num_start):
         with open("StockSolution.txt","r") as file:
+            while(num_start >= 0):
+                temp = file.readline()
+                num_start -= 1
+
             for line in file:
-                num,form = file.readline().split()[:2]
-                print(num)
-                print(type(int(num)))
-                print(form)
+                num,form = line.split()[:2]
+
                 try:
                     if (type(int(num)) == int):
                         solution = Solution(num,form)
                         self.add(solution)
                 except ValueError:
-
                     continue
 
 
@@ -66,9 +67,12 @@ def main ():
     sol = Solution(400, "NaCl")
     test.add(sol)
     print(test)
+
     print("Changing NaCl to KCl")
     sol.set_compound_formula("KCl")
-    test.readTxT("StockSolution.txt")
+    print(test)
+
+    test.readTxT("StockSolution.txt",2)
     print(test)
 
 if (__name__ == "__main__"):
