@@ -38,24 +38,21 @@ class SolutionList:
 
         return temp
 
-    def readTxT(self,file_name,num_start):
-        with open("StockSolution.txt","r") as file:
-            while(num_start >= 0):
-                temp = file.readline()
-                num_start -= 1
-
+    def collectStockSolution(self,file_name):
+        with open(file_name,"r") as file:
             for line in file:
                 num,form = line.split()[:2]
+                solution = Solution(num,form)
+                self.add(solution)
+                # try:
+                #     if (type(int(num)) == int):
+                #         solution = Solution(num,form)
+                #         self.add(solution)
+                # except ValueError:
+                #     continue
 
-                try:
-                    if (type(int(num)) == int):
-                        solution = Solution(num,form)
-                        self.add(solution)
-                except ValueError:
-                    continue
-
-
-
+    def makeSolution(self,file_name):
+        pass
 
     def updateList(self):
         pass
@@ -64,16 +61,18 @@ class SolutionList:
 def main ():
     print("A free trial as you will")
     test = SolutionList()
-    sol = Solution(400, "NaCl")
-    test.add(sol)
-    print(test)
 
-    print("Changing NaCl to KCl")
-    sol.set_compound_formula("KCl")
-    print(test)
+    # sol = Solution(400, "NaCl")
+    # test.add(sol)
+    # print(test)
 
-    test.readTxT("StockSolution.txt",2)
+    # print("Changing NaCl to KCl")
+    # sol.set_compound_formula("KCl")
+    # print(test)
+
+    test.readTxT("StockSolution.txt")
     print(test)
+    test.
 
 if (__name__ == "__main__"):
     main()
