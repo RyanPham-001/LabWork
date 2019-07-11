@@ -13,7 +13,14 @@ class SolutionList:
         self.___size += 1
 
     def remove (self, Solution):
-        pass
+
+        found = False
+        if (contains(Solution)):
+            if (found):
+                for solution in self.___List:
+                    if (solution == )
+                    self.___List.del()
+            pass
 
     def contains(self, element):
         pass
