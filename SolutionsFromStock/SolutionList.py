@@ -17,8 +17,8 @@ class SolutionList:
 
     def contains(self, element):
         pass
-        #check
-        
+        #final check
+
         #initialize found to false
         #binary search
         #if found
