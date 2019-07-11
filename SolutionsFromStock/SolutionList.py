@@ -38,7 +38,7 @@ class SolutionList:
 
         return temp
 
-    def collectStockSolution(self,file_name):
+    def collectSolution(self,file_name):
         with open(file_name,"r") as file:
             for line in file:
                 num,form = line.split()[:2]
@@ -50,9 +50,6 @@ class SolutionList:
                 #         self.add(solution)
                 # except ValueError:
                 #     continue
-
-    def makeSolution(self,file_name):
-        pass
 
     def updateList(self):
         pass
@@ -70,9 +67,9 @@ def main ():
     # sol.set_compound_formula("KCl")
     # print(test)
 
-    test.readTxT("StockSolution.txt")
+    test.collectSolution("StockSolution.txt")
     print(test)
-    test.
+
 
 if (__name__ == "__main__"):
     main()
