@@ -14,7 +14,8 @@ class SolutionList:
 
     def remove (self, Solution):
         pass
-
+    def contains(self, element):
+        pass
         #initialize found to false
         #binary search
         #if found
