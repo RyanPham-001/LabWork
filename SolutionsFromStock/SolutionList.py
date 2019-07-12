@@ -13,17 +13,18 @@ class SolutionList:
         self.___size += 1
 
     def remove (self, Solution):
-
-        found = False
         if (contains(Solution)):
-            if (found):
-                for solution in self.___List:
-                    if (solution == )
-                    self.___List.del()
+            for solution in self.___List:
+                if (solution == )
+                self.___List.del()
             pass
 
     def contains(self, element):
-        pass
+        #found = False
+        for i in range(0,getSize()):
+            if (element == self.___List[i].get_compound_formula()):
+                #found = True
+                return(True)
         #final check
 
         #initialize found to false
