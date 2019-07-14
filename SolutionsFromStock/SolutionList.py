@@ -71,13 +71,14 @@ def main ():
     print("A free trial as you will")
     test = SolutionList()
 
-    # sol = Solution(400, "NaCl")
-    # test.add(sol)
-    # print(test)
+    sol = Solution(400, "NaCl")
+    test.add(sol)
+    print(test)
 
-    # print("Changing NaCl to KCl")
-    # sol.set_compound_formula("KCl")
-    # print(test)
+    print("Changing NaCl to KCl")
+    sol.set_compound_formula("KCl")
+    print(test)
+    print(test.contains("NaCl"))
 
     test.collectSolution("StockSolution.txt")
     print(test)
