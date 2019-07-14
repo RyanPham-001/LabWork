@@ -14,17 +14,19 @@ class SolutionList:
 
     def remove (self, Solution):
         if (contains(Solution)):
-            for solution in self.___List:
-                if (solution == )
-                self.___List.del()
-            pass
+            for i in range(0,self.getSize()):
+                if (Solution == self.___List[i].get_compound_formula()):
+                    del(self.___List[i])
+                    return True
+            return False
 
     def contains(self, element):
         #found = False
-        for i in range(0,getSize()):
+        for i in range(0,self.getSize()):
             if (element == self.___List[i].get_compound_formula()):
                 #found = True
                 return(True)
+        return False
         #final check
 
         #initialize found to false
@@ -78,7 +80,7 @@ def main ():
     print("Changing NaCl to KCl")
     sol.set_compound_formula("KCl")
     print(test)
-    print(test.contains("NaCl"))
+    print(test.contains("KCl"))
 
     test.collectSolution("StockSolution.txt")
     print(test)
