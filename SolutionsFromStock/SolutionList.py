@@ -23,7 +23,8 @@ class SolutionList:
             #resort list
         #else
             #print that it is not found in list
-
+    def contains(self, element):
+        pass
     def getSize(self):
         return self.___size
 

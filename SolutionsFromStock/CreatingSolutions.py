@@ -9,7 +9,7 @@ class CreatingSolutions:
         self.___check_last = False
         self.___StockSolutionList = SolutionList()
         #how to keep the composition togeter? use dictionary or tuple?
-        
+
     def getFinalVolume (self):
         return self.___final_volume
 
@@ -19,7 +19,7 @@ class CreatingSolutions:
     def C1V1equalsC2V2(self, final_volume):
         pass
 
-
+#rrrr
 
 def main():
     test = Solution(400,"NaCl")
