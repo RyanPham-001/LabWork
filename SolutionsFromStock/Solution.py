@@ -1,12 +1,11 @@
 class Solution:
-
+    #create a way for % comps
     def __init__(self, concentration = 0, compound_formula = ""):
         self.__concentration = concentration
         self.__compound_formula = compound_formula
 
     #Returns the concentration of the solution
     def get_concentration (self):
-        
         return(self.__concentration)
 
     #Returns the chemicalforumla of the solution

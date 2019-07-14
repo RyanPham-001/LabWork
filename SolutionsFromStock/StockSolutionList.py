@@ -1,7 +1,7 @@
 from Solution import Solution
+from NoneError import NoneError
 
-class SolutionList:
-
+class StockSolutionList:
     def __init__ (self):
         self.___location = 0
         self.___size = 0
@@ -22,6 +22,8 @@ class SolutionList:
 
     def contains(self, element):
         #found = False
+        if (self.isEmpty()):
+            raise NoneError()
         for i in range(0,self.getSize()):
             if (element == self.___List[i].get_compound_formula()):
                 #found = True
@@ -41,7 +43,9 @@ class SolutionList:
     def getSize(self):
         return self.___size
 
-    #Returns the
+    def isEmpty(self):
+        return (self.getSize() == 0)
+
     def __str__ (self):
         temp = ""
         temp = "List of Solutions\n\n"
@@ -51,6 +55,7 @@ class SolutionList:
             temp += "\n"
 
         return temp
+
 
     def collectSolution(self,file_name):
         with open(file_name,"r") as file:
@@ -65,13 +70,19 @@ class SolutionList:
                 # except ValueError:
                 #     continue
 
-    def updateList(self):
-        pass
+    def updateList(self,file_name):
+        with open(file_name, "w") as file:
+            for line in range(0,self.getSize()):
+                file.write("%s %s\n" % (self.___List[line].get_concentration(), self.___List[line].get_compound_formula()))
+
         #rewrites the .txt file to update what has been added/removed
 
 def main ():
     print("A free trial as you will")
-    test = SolutionList()
+    test = StockSolutionList()
+
+    test.collectSolution("StockSolution.txt")
+    print(test)
 
     sol = Solution(400, "NaCl")
     test.add(sol)
@@ -80,10 +91,10 @@ def main ():
     print("Changing NaCl to KCl")
     sol.set_compound_formula("KCl")
     print(test)
-    print(test.contains("KCl"))
 
-    test.collectSolution("StockSolution.txt")
-    print(test)
+    print(test.contains("KCl"))
+    print(test.contains("KK"))
+    test.updateList("StockSolutionNew.txt")
 
 
 if (__name__ == "__main__"):

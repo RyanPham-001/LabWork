@@ -1,3 +1,4 @@
+
 CreateSolutions.txt
 Final Volume of Solution(in mL):
 
@@ -10,7 +11,7 @@ Composition of the solutions (Concentration(mM) Compound Formula(case sensitive)
 400 PBS
 50 MgCl2
 
-250 
+250
 300 NaCl
 MgCl2
 300 PBS

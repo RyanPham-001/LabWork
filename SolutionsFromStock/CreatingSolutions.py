@@ -1,5 +1,5 @@
 from Solution import Solution
-from SolutionList import SolutionList
+from StockSolutionList import StockSolutionList
 
 class CreatingSolutions:
 
@@ -7,9 +7,9 @@ class CreatingSolutions:
         self.___final_volume = 0
         self.___check_first = False
         self.___check_last = False
-        self.___StockSolutionList = SolutionList()
+        self.___StockSolutionList = StockSolutionList()
         #how to keep the composition togeter? use dictionary or tuple?
-        
+
     def getFinalVolume (self):
         return self.___final_volume
 
@@ -21,7 +21,7 @@ class CreatingSolutions:
 
 
 
-def main():
+def test():
     test = Solution(400,"NaCl")
     print(test.get_concentration())
     print(test)
@@ -31,4 +31,4 @@ def main():
     print(test)
 
 if (__name__ == '__main__'):
-    main()
+    test()
