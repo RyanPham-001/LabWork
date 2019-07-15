@@ -1,5 +1,7 @@
+from RunningFiles.NoneError import NoneError
 from RunningFiles.Solution import Solution
 from RunningFiles.StockSolutionList import StockSolutionList
+
 
 class CreatingSolutions:
 
