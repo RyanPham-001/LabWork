@@ -1,4 +1,5 @@
-from CreatingSolutions import CreatingSolutions
-from NoneError import NoneError
-from Solution import Solution
-from StockSolutionList import StockSolutionList
+# __init__.py
+# from .CreatingSolutions import *
+# from .NoneError import *
+# from .Solution import *
+# from .StockSolutionList import *

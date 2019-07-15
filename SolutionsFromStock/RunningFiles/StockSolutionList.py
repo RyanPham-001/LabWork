@@ -1,5 +1,5 @@
-from Solution import Solution
-from NoneError import NoneError
+from RunningFiles.Solution import Solution
+from RunningFiles.NoneError import NoneError
 
 class StockSolutionList:
     def __init__ (self):

@@ -1,5 +1,5 @@
-from Solution import Solution
-from StockSolutionList import StockSolutionList
+from RunningFiles.Solution import Solution
+from RunningFiles.StockSolutionList import StockSolutionList
 
 class CreatingSolutions:
 
