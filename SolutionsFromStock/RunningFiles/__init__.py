@@ -1,4 +1,6 @@
-from CreatingSolutions import CreatingSolutions
-from NoneError import NoneError
-from Solution import Solution
-from StockSolutionList import StockSolutionList
+#__init__.py
+# from .NoneError import *
+# from .Solution import *
+# from .StockSolutionList import *
+# from .CreatingSolutions import *
+#https://towardsdatascience.com/whats-init-for-me-d70a312da583
