@@ -1,4 +1,4 @@
-400 NaCl
+400 MgCl
 500 KCa
 300 RbCl
 400 KCl

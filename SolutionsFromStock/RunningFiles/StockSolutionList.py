@@ -18,7 +18,8 @@ class StockSolutionList:
             raise NoneError()
 
         if (self.contains(Solution)):
-            for i in range(0,self.getSize() - 1):
+            for i in range(0,self.getSize()):
+                print(self.___List[i].get_compound_formula())
                 if (Solution == self.___List[i].get_compound_formula()):
                     del(self.___List[i])
                     return True
@@ -28,7 +29,7 @@ class StockSolutionList:
         if (self.isEmpty()):
             raise NoneError()
 
-        for i in range(0,self.getSize() - 1):
+        for i in range(0,self.getSize()):
             if (element == self.___List[i].get_compound_formula()):
                 return True
         return False
