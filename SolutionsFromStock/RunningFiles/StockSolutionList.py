@@ -1,5 +1,5 @@
-from RunningFiles.NoneError import NoneError
-from RunningFiles.Solution import Solution
+from NoneError import NoneError
+from Solution import Solution
 
 
 class StockSolutionList:
@@ -17,18 +17,18 @@ class StockSolutionList:
         if (self.isEmpty()):
             raise NoneError()
 
-        if (contains(Solution)):
-            for i in range(0,self.getSize()):
+        if (self.contains(Solution)):
+            for i in range(0,self.getSize() - 1):
                 if (Solution == self.___List[i].get_compound_formula()):
                     del(self.___List[i])
                     return True
-            return False
+        return False
 
     def contains(self, element):
         if (self.isEmpty()):
             raise NoneError()
 
-        for i in range(0,self.getSize()):
+        for i in range(0,self.getSize() - 1):
             if (element == self.___List[i].get_compound_formula()):
                 return True
         return False
@@ -90,13 +90,13 @@ def main ():
     sol = Solution(400, "NaCl")
     test.add(sol)
     print(test)
-
+    print(test.contains("NaCl"))
     print("Changing NaCl to KCl")
     sol.set_compound_formula("KCl")
     print(test)
 
     print(test.contains("KCl"))
-    print(test.contains("KK"))
+
     test.updateList("StockSolutionNew.txt")
 
 
