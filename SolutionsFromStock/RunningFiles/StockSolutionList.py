@@ -1,5 +1,5 @@
-from NoneError import NoneError
-from Solution import Solution
+from RunningFiles.NoneError import NoneError
+from RunningFiles.Solution import Solution
 
 
 class StockSolutionList:
@@ -22,6 +22,7 @@ class StockSolutionList:
                 print(self.___List[i].get_compound_formula())
                 if (Solution == self.___List[i].get_compound_formula()):
                     del(self.___List[i])
+                    self.___size -= 1
                     return True
         return False
 
