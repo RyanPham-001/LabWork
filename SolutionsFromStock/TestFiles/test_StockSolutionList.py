@@ -3,6 +3,7 @@ import sys
 import os
 from pathlib import *
 #Just want to import Path, but on MacOS does not work
+
 sys.path.append(os.path.dirname(Path(__file__).resolve().parent))
 
 from RunningFiles.NoneError import NoneError
@@ -59,6 +60,6 @@ class TestStockSolution(unittest.TestCase):
     def test_empty_contains(self):
         with self.assertRaises(NoneError):
             self.testList.contains("KCl")
-
+    
 if (__name__ == "__main__"):
     unittest.main()

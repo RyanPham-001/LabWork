@@ -1,6 +1,12 @@
+import sys
+import os
+from pathlib import *
+
+sys.path.append(os.path.dirname(Path(__file__).resolve().parent))
+# sys.path.append(os.path.dirname(Path(__file__).resolve().parent.parent))
+
 from RunningFiles.NoneError import NoneError
 from RunningFiles.Solution import Solution
-
 
 class StockSolutionList:
     def __init__ (self):
@@ -83,6 +89,7 @@ class StockSolutionList:
         #rewrites the .txt file to update what has been added/removed
 
 def main ():
+    print(os.path.dirname(Path(__file__).resolve()))
     print("A free trial as you will")
     test = StockSolutionList()
 
