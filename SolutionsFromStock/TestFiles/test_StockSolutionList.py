@@ -60,6 +60,7 @@ class TestStockSolution(unittest.TestCase):
     def test_empty_contains(self):
         with self.assertRaises(NoneError):
             self.testList.contains("KCl")
-    
+
+
 if (__name__ == "__main__"):
     unittest.main()
