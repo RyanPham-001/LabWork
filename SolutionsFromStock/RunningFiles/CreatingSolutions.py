@@ -9,7 +9,7 @@ from RunningFiles.Solution import Solution
 from RunningFiles.StockSolutionList import StockSolutionList
 class CreatingSolutions:
 
-    def __init__(self,final_volume):
+    def __init__(self):
         self.___final_volume = 0
         self.___check_first = False
         self.___check_last = False
