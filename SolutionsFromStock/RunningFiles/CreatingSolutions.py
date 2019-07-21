@@ -8,6 +8,7 @@ from RunningFiles.NoneError import NoneError
 from RunningFiles.Solution import Solution
 from RunningFiles.StockSolutionList import StockSolutionList
 from RunningFiles.OutputSolution import OutputSolution
+
 class CreatingSolutions:
 
     def __init__(self):
@@ -15,16 +16,16 @@ class CreatingSolutions:
         self.___check_first = False
         self.___check_last = False
         self.___StockSolutionList = StockSolutionList()
+        self.___StockSolutionList.collectSolution("StockSolution.txt")
         self.___Solutions = []
-        self.___Composition_of_Solutions = []
+
         #how to keep the composition togeter? use dictionary or tuple?
 
     def getFinalVolume (self):
         return self.___final_volume
 
-
-    def C1V1equalsC2V2(self, final_volume):
-        pass
+    def getStockSolutionList(self):
+        return self.___StockSolutionList
 
     def makeSolution(self, file_name):
         with open(file_name,"r") as file:
@@ -33,10 +34,20 @@ class CreatingSolutions:
             temp_solution = OutputSolution()
             for line in file:
                 try:
-                num,form = line.split()[:2]
+                    num,form = line.split()[:2]
+                    temp_solution.C1V1equalsC2V2(self.getStockSolutionList(),num,form)
                 except(ValueError):
-                    temp_solution.set_final_volume(line)
-        pass
+                    # if (type(line) is int):
+                    try:
+                        temp_solution = OutputSolution(int(line))
+                    except(ValueError):
+                        #Finds the delimter "\n"
+                        continue
+                    # temp_solution.set_final_volume(line)
+#try int(line)
+#except (whatever it is)
+#make new OutputSOlution
+
 
 
 def test():
@@ -50,7 +61,7 @@ def test():
 
     test1 = CreatingSolutions()
     test1.makeSolution("CreateSolutions.txt")
-
+    print(test1.getStockSolutionList())
 
 if (__name__ == '__main__'):
     test()

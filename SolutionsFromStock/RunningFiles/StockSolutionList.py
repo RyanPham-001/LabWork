@@ -25,12 +25,20 @@ class StockSolutionList:
 
         if (self.contains(Solution)):
             for i in range(0,self.getSize()):
-                print(self.___List[i].get_compound_formula())
                 if (Solution == self.___List[i].get_compound_formula()):
                     del(self.___List[i])
                     self.___size -= 1
                     return True
         return False
+
+    def indexOf(self,Solution):
+        if (self.isEmpty()):
+            raise NoneError()
+
+        for i in range(0,self.getSize()):
+            if (Solution == self.___List[i].get_compound_formula()):
+                return i
+            return -1
 
     def contains(self, element):
         if (self.isEmpty()):
@@ -71,9 +79,13 @@ class StockSolutionList:
     def collectSolution(self,file_name):
         with open(file_name,"r") as file:
             for line in file:
-                num,form = line.split()[:2]
-                solution = Solution(num,form)
-                self.add(solution)
+                try:
+                    num,form = line.split()[:2]
+                    num = int(num)
+                    solution = Solution(num,form)
+                    self.add(solution)
+                except(ValueError):
+                    print("Check that the .txt file is formatted correctly")
                 # try:
                 #     if (type(int(num)) == int):
                 #         solution = Solution(num,form)
