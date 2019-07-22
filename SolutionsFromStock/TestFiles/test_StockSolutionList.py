@@ -61,6 +61,30 @@ class TestStockSolution(unittest.TestCase):
         with self.assertRaises(NoneError):
             self.testList.contains("KCl")
 
+    def test_indexOfEmpty(self):
+        with self.assertRaises(NoneError):
+            self.testList.indexOf("AgCl")
+
+    def test_indexOfInList(self):
+        self.testList.collectSolution("test_StockSolution.txt")
+        self.assertEqual(self.testList.indexOf("NaCl"),0,"Should find NaCl in position 0")
+
+    def test_indexOfNotInList(self):
+        self.testList.collectSolution("test_StockSolution.txt")
+        self.assertEqual(self.testList.indexOf("NH3"),-1,"Should not be in list")
+
+    def test_concAtIndex(self):
+        with self.assertRaises(NoneError):
+            self.testList.concentrationAtIndex(2)
+
+    def test_concAtIndex(self):
+        self.testList.collectSolution("test_StockSolution.txt")
+        self.assertEqual(self.testList.concentrationAtIndex(2),1000,"Should be 1000 in position 2")
+
+    def test_concAtIndexOutOfBounds(self):
+        with self.assertRaises(IndexError):
+            self.testList.collectSolution("test_StockSolution.txt")
+            self.testList.concentrationAtIndex(3)
 
 if (__name__ == "__main__"):
     unittest.main()

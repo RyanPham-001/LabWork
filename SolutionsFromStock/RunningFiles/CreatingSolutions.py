@@ -74,9 +74,6 @@ class CreatingSolutions:
         return V2
         #rename stocksolutionlist with solutionlist
 
-    def makeProduct(self):
-        # self.___final_result +=
-        pass
 
 def test():
     test = Solution(400,"NaCl")
@@ -93,7 +90,7 @@ def test():
     tess = OutputSolution(400,"BeCl2",30)
     print(tess)
 
-    
+
 
 
 

@@ -10,7 +10,6 @@ from RunningFiles.Solution import Solution
 
 class StockSolutionList:
     def __init__ (self):
-        self.___location = 0
         self.___size = 0
         self.___List= []
         self.___found = False
@@ -41,6 +40,8 @@ class StockSolutionList:
             return -1
 
     def concentrationAtIndex(self,index):
+        if (self.isEmpty()):
+            raise NoneError()
         return (self.___List[index].get_concentration())
 
     def contains(self, element):
