@@ -12,43 +12,71 @@ from RunningFiles.OutputSolution import OutputSolution
 class CreatingSolutions:
 
     def __init__(self):
-        self.___final_volume = 0
-        self.___check_first = False
-        self.___check_last = False
-        self.___StockSolutionList = StockSolutionList()
-        self.___StockSolutionList.collectSolution("StockSolution.txt")
-        self.___Solutions = []
+        self.___target_conc = 0
+        self.___target_compound = ""
+        self.___message = ""
+        self.___SolutionList = StockSolutionList()
+        self.___SolutionList.collectSolution("StockSolution.txt")
+        self.___OutputSolutions = StockSolutionList()
 
         #how to keep the composition togeter? use dictionary or tuple?
 
     def getFinalVolume (self):
         return self.___final_volume
 
-    def getStockSolutionList(self):
-        return self.___StockSolutionList
+    def set_final_volume (self, final_volume):
+        self.___final_volume = final_volume
+
+    def setTargetConc(self,target):
+        self.___target_conc = target
+
+    def setTargetCompound(self,target):
+        self.___target_compound = target
+
+    def getTargetConc(self):
+        return self.___target_conc
+
+    def getTargetCompound(self):
+        return self.___target_compound
 
     def makeSolution(self, file_name):
         with open(file_name,"r") as file:
-            #if (error for have not able to split in two)
-                #final_volume = line
-            temp_solution = OutputSolution()
             for line in file:
+                final_volume = 0
                 try:
                     num,form = line.split()[:2]
-                    temp_solution.C1V1equalsC2V2(self.getStockSolutionList(),num,form)
+                    num = int(num)
+                    self.C1V1equalsC2V2(num,form,final_volume)
+
                 except(ValueError):
-                    # if (type(line) is int):
                     try:
-                        temp_solution = OutputSolution(int(line))
+                        final_volume = int(line)
+
                     except(ValueError):
                         #Finds the delimter "\n"
                         continue
-                    # temp_solution.set_final_volume(line)
-#try int(line)
-#except (whatever it is)
-#make new OutputSOlution
 
+    def C1V1equalsC2V2(self,conc,formula,volume):
+        indexOf = self.___SolutionList.indexOf(formula)
 
+        if (indexOf == -1):
+            self.___message += "Stock Solution was not found in the list"
+            return
+        #Target
+        C1 = conc
+        V1 = volume
+        #Stock
+        C2 = self.___SolutionList.concentrationAtIndex(indexOf)
+        V2 = C1 * V1 / C2
+
+        tempSolution = OutputSolution(conc,formula,V2)
+        self.___OutputSolutions.add(tempSolution)
+        return V2
+        #rename stocksolutionlist with solutionlist
+
+    def makeProduct(self):
+        # self.___final_result +=
+        pass
 
 def test():
     test = Solution(400,"NaCl")
@@ -61,7 +89,13 @@ def test():
 
     test1 = CreatingSolutions()
     test1.makeSolution("CreateSolutions.txt")
-    print(test1.getStockSolutionList())
+
+    tess = OutputSolution(400,"BeCl2",30)
+    print(tess)
+
+    
+
+
 
 if (__name__ == '__main__'):
     test()

@@ -40,6 +40,9 @@ class StockSolutionList:
                 return i
             return -1
 
+    def concentrationAtIndex(self,index):
+        return (self.___List[index].get_concentration())
+
     def contains(self, element):
         if (self.isEmpty()):
             raise NoneError()

@@ -1,29 +1,22 @@
-class OutputSolution:
-    def __init__ (self,final_volume = 0):
-        self.___final_volume = final_volume
-        self.___final_result = ()
-        self.___target_conc = 0
-        self.___target_compound = ""
-        self.___message = ""
+import sys
+import os
+from pathlib import *
 
-    def set_final_volume (self, final_volume):
+sys.path.append(os.path.dirname(Path(__file__).resolve().parent))
+from RunningFiles.Solution import Solution
+
+class OutputSolution(Solution):
+    def __init__ (self,conc = 0, formula = "", final_volume = 0):
+        super().__init__(conc,formula)
         self.___final_volume = final_volume
 
-    def get_final_volume(self):
+    def getVolume (self):
         return self.___final_volume
 
-    def setTargetConc(self,target):
-        self.___target_conc = target
+    def setVolume (self, volume):
+        self.___final_volume = volume
 
-    def setTargetCompound(self,target):
-        self.___target_compound = target
-
-    def getTargetConc(self):
-        return self.___target_conc
-
-    def getTargetCompound(self):
-        return self.___target_compound
-
-    def C1V1equalsC2V2(self,StockList,conc,formula):
-        if (StockList.indexOf() == -1):
-            self.message += "Stock Solution was not found in the list"
+    def __str__ (self):
+        temp = ("%s %s uL" % (super().__str__(), str(self.___final_volume)))
+        # temp = (super().__str__()) + " " + str(self.___final_volume)
+        return temp
