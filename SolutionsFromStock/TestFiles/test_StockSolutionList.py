@@ -69,11 +69,19 @@ class TestStockSolution(unittest.TestCase):
         self.testList.collectSolution("test_StockSolution.txt")
         self.assertEqual(self.testList.indexOf("NaCl"),0,"Should find NaCl in position 0")
 
+    # def test_indexOfPBS(self):
+    #     self.testList.collectSolution("test_StockSolution.txt")
+    #     print(self.testList)
+    #     print(self.testList.formulaAtIndex(1))
+    #     print(self.testList.getSize())
+    #
+    #     self.assertEqual(self.testList.indexOf("MgCl2"),1,"Should find PBS in position 2")
+
     def test_indexOfNotInList(self):
         self.testList.collectSolution("test_StockSolution.txt")
         self.assertEqual(self.testList.indexOf("NH3"),-1,"Should not be in list")
 
-    def test_concAtIndex(self):
+    def test_concAtIndexEmptyList(self):
         with self.assertRaises(NoneError):
             self.testList.concentrationAtIndex(2)
 

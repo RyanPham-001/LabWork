@@ -6,3 +6,7 @@
 500 NaCl
 200 Fi
 500 PBS
+
+5000
+10 NaCl
+20 Fi

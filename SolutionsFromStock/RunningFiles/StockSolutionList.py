@@ -37,12 +37,19 @@ class StockSolutionList:
         for i in range(0,self.getSize()):
             if (Solution == self.___List[i].get_compound_formula()):
                 return i
-            return -1
+        return -1
 
     def concentrationAtIndex(self,index):
         if (self.isEmpty()):
             raise NoneError()
+
         return (self.___List[index].get_concentration())
+
+    def formulaAtIndex(self,index):
+        if (self.isEmpty()):
+            raise NoneError()
+
+        return (self.___List[index].get_compound_formula())
 
     def contains(self, element):
         if (self.isEmpty()):
@@ -88,6 +95,7 @@ class StockSolutionList:
                     num = int(num)
                     solution = Solution(num,form)
                     self.add(solution)
+
                 except(ValueError):
                     print("Check that the .txt file is formatted correctly")
                 # try:
@@ -109,19 +117,20 @@ def main ():
     test = StockSolutionList()
 
     test.collectSolution("StockSolution.txt")
-    print(test)
+    print(test.indexOf("PBS"))
+    # print(test)
+    #
+    # sol = Solution(400, "NaCl")
+    # test.add(sol)
+    # print(test)
+    # print(test.contains("NaCl"))
+    # print("Changing NaCl to KCl")
+    # sol.set_compound_formula("KCl")
+    # print(test)
+    #
+    # print(test.contains("KCl"))
 
-    sol = Solution(400, "NaCl")
-    test.add(sol)
-    print(test)
-    print(test.contains("NaCl"))
-    print("Changing NaCl to KCl")
-    sol.set_compound_formula("KCl")
-    print(test)
-
-    print(test.contains("KCl"))
-
-    test.updateList("StockSolutionNew.txt")
+    # test.updateList("StockSolutionNew.txt")
 
 
 if (__name__ == "__main__"):

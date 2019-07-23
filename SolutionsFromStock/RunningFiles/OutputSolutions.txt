@@ -1,0 +1,15 @@
+Follow the determined values
+Final Volume is 500 mL
+Use 250.0 mL of NaCl to make 200 mM of NaCl
+Use 100.0 mL of PBS to make 100 mM of PBS
+Fill remaining volume with 150.0 mL of solvent
+
+Final Volume is 1000 mL
+Use 1250.0 mL of NaCl to make 500 mM of NaCl
+Use 40.0 mL of Fi to make 200 mM of Fi
+Use 1000.0 mL of PBS to make 500 mM of PBS
+Fill remaining volume with -1290.0 mL of solvent
+
+Final Volume is 5000 mL
+Use 125.0 mL of NaCl to make 10 mM of NaCl
+Use 20.0 mL of Fi to make 20 mM of Fi

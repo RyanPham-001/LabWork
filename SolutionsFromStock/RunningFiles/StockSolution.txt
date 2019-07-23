@@ -1,3 +1,4 @@
-400 MgCl
-500 KCa
+400 NaCl
+500 PBS
 300 RbCl
+5000 Fi

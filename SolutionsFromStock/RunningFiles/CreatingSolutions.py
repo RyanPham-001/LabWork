@@ -39,29 +39,13 @@ class CreatingSolutions:
     def getTargetCompound(self):
         return self.___target_compound
 
-    def makeSolution(self, file_name):
-        with open(file_name,"r") as file:
-            for line in file:
-                final_volume = 0
-                try:
-                    num,form = line.split()[:2]
-                    num = int(num)
-                    self.C1V1equalsC2V2(num,form,final_volume)
-
-                except(ValueError):
-                    try:
-                        final_volume = int(line)
-
-                    except(ValueError):
-                        #Finds the delimter "\n"
-                        continue
-
     def C1V1equalsC2V2(self,conc,formula,volume):
         indexOf = self.___SolutionList.indexOf(formula)
 
         if (indexOf == -1):
-            self.___message += "Stock Solution was not found in the list"
-            return
+            print("Stock Solution was not found in the list")
+            # self.___message +=
+            return -1
         #Target
         C1 = conc
         V1 = volume
@@ -69,26 +53,71 @@ class CreatingSolutions:
         C2 = self.___SolutionList.concentrationAtIndex(indexOf)
         V2 = C1 * V1 / C2
 
+
         tempSolution = OutputSolution(conc,formula,V2)
         self.___OutputSolutions.add(tempSolution)
         return V2
         #rename stocksolutionlist with solutionlist
 
+    def makeSolution(self, file_name):
+        countVolume = 0
+        workingTest = True
+
+        with open("OutputSolutions.txt","w") as output:
+            output.write("Follow the determined values\n")
+
+            with open(file_name,"r") as file:
+                final_volume = 0
+                workingTest = False
+                AllGood = False
+                for line in file:
+                    try:
+                        num,form = line.split()[:2]
+                        num = int(num)
+                        check = self.C1V1equalsC2V2(num,form,final_volume)
+
+                        if (check == -1):
+                            output.write("Stock Solution for %s not found, unable to calculate\n" % form)
+                            if (workingTest):
+                                AllGood = False
+
+                        else:
+                            output.write("Use %s mL of %s to make %s mM of %s\n" % (check,form,num,form))
+                            countVolume += check
+                            workingTest = True
+                            if (AllGood):
+                                AllGood = True
+                    except(ValueError):
+                        try:
+                            if (line == "\n"):
+                                continue
+                            if (AllGood):
+                                output.write("Fill remaining volume with %s mL of solvent\n\n" % (final_volume - countVolume))
+                            workingTest = False
+                            AllGood = True
+                            countVolume = 0
+                            final_volume = int(line)
+                            output.write("Final Volume is %s mL\n" % (final_volume))
+
+                        except(ValueError):
+                            #Finds the delimter "\n"
+                            continue
 
 def test():
-    test = Solution(400,"NaCl")
-    print(test.get_concentration())
-    print(test)
-
-    test.set_compound_formula("KCl")
-    test.set_concentration(300)
-    print(test)
-
+    # test = Solution(400,"NaCl")
+    # print(test.get_concentration())
+    # print(test)
+    #
+    # test.set_compound_formula("KCl")
+    # test.set_concentration(300)
+    # print(test)
+    #
     test1 = CreatingSolutions()
     test1.makeSolution("CreateSolutions.txt")
-
-    tess = OutputSolution(400,"BeCl2",30)
-    print(tess)
+    #
+    # tess = OutputSolution(400,"BeCl2",30)
+    # test1.makeSolution("CreateSolutions.txt")
+    # print(tess)
 
 
 
