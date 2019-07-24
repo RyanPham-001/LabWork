@@ -1,12 +1,3 @@
-500
-200 NaCl
-100 PBS
-
-1000
-500 NaCl
-200 Fi
-500 PBS
-
-5000
-10 NaCl
-20 Fi
+50
+50 TrisHCl
+150 KCl

@@ -117,7 +117,7 @@ def main ():
     test = StockSolutionList()
 
     test.collectSolution("StockSolution.txt")
-    print(test.indexOf("PBS"))
+    test.updateList("StockSolutionNew.txt")
     # print(test)
     #
     # sol = Solution(400, "NaCl")
