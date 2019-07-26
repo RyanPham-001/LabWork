@@ -1,3 +1,4 @@
+Run CreatingSolutions.py in RunningFiles and adjust solutions in CreateSolution.txt and StockSolution.txt
 CreateSolutions.txt
 Final Volume of Solution(in mL):
 Composition of the solutions (Concentration(mM) Compound Formula(case sensitive)):
