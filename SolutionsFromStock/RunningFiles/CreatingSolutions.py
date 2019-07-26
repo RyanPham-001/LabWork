@@ -69,38 +69,35 @@ class CreatingSolutions:
             with open(file_name,"r") as file:
                 final_volume = 0
                 workingTest = False
-                AllGood = False
                 for line in file:
                     try:
                         num,form = line.split()[:2]
                         num = int(num)
                         check = self.C1V1equalsC2V2(num,form,final_volume)
-
+                        print(workingTest)
                         if (check == -1):
                             output.write("Stock Solution for %s not found, unable to calculate\n" % form)
-                            if (workingTest):
-                                AllGood = False
+                            workingTest = True
 
                         else:
                             output.write("Use %s mL of %s to make %s mM of %s\n" % (check,form,num,form))
                             countVolume += check
-                            workingTest = True
-                            if (AllGood):
-                                AllGood = True
+
                     except(ValueError):
                         try:
-                            if (line == "\n"):
-                                continue
-                            if (AllGood):
-                                output.write("Fill remaining volume with %s mL of solvent\n\n" % (final_volume - countVolume))
-                            workingTest = False
-                            AllGood = True
-                            countVolume = 0
                             final_volume = int(line)
+                            # print(workingTest)
+                            # if (workingTest):
+                            #     output.write("Fill remaining volume with %s mL of solvent\n\n" % (final_volume - countVolume))
+                            workingTest = True
+                            countVolume = 0
+
                             output.write("Final Volume is %s mL\n" % (final_volume))
 
                         except(ValueError):
                             #Finds the delimter "\n"
+                            if (workingTest):
+                                output.write("Fill remaining volume with %s mL of solvent\n\n" % (final_volume - countVolume))
                             continue
 
 def test():

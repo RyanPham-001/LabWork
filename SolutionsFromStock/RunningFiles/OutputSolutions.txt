@@ -2,3 +2,10 @@ Follow the determined values
 Final Volume is 50 mL
 Use 2.5 mL of TrisHCl to make 50 mM of TrisHCl
 Use 3.75 mL of KCl to make 150 mM of KCl
+Fill remaining volume with 43.75 mL of solvent
+
+Final Volume is 250 mL
+Use 12.5 mL of TrisHCl to make 50 mM of TrisHCl
+Use 18.75 mL of KCl to make 150 mM of KCl
+Fill remaining volume with 218.75 mL of solvent
+

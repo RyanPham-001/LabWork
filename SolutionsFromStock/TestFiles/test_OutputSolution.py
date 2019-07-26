@@ -57,5 +57,6 @@ class TestOutputSolution(unittest.TestCase):
         self.assertEqual(self.test2.get_concentration(),500,"Should be 500")
         self.assertEqual(self.test2.get_compound_formula(),"KCl","Should be KCl")
         self.assertEqual(self.test2.getVolume(),25,"Should be 25")
+        
 if __name__ == "__main__":
     unittest.main()
